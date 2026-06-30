@@ -1,0 +1,336 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: "Inter", "Space Grotesk", ui-sans-serif, system-ui, sans-serif;
+  --font-mono: "JetBrains Mono", ui-monospace, SFMono-Regular, monospace;
+}
+
+/* 
+ * VIBRANT OPTIMISTIC DESIGN SYSTEM (نظام التصميم المبهج والمتفائل)
+ * Crafted with glowing cheerful gradients, rich interactive states, pristine glassmorphism, 
+ * and uplifting professional feedback loops.
+ */
+:root {
+  /* Cheerful Indigo Dusk & Neon Aurora */
+  --bg-app: #090a16;          /* Deep starry midnight violet (inspiring, not depressing) */
+  --bg-card: #11132a;         /* Cheerful vibrant deep indigo card */
+  --bg-card-hover: #191b3d;   /* Luminous hover state */
+  --bg-input: #060712;        /* Sleek dark inset */
+  --border-main: #212454;     /* Cheerful soft violet border */
+  --border-focus: #3b4093;    /* Highlight focus border */
+  
+  --text-main: #f8fafc;       /* Clean crystal white */
+  --text-muted: #94a3b8;      /* Clear silver gray */
+  --text-dim: #64748b;        /* Soft labels */
+  
+  --btn-primary-bg: #4f46e5;  /* Vibrant energetic Indigo */
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: #6366f1;
+  
+  --btn-secondary-bg: #1e2042;
+  --btn-secondary-text: #f1f5f9;
+  --btn-secondary-hover: #2b2e5c;
+  
+  --accent-indigo: #818cf8;
+  --accent-emerald: #10b981;
+  --accent-rose: #f43f5e;
+  --accent-amber: #f59e0b;
+}
+
+.light-mode-theme {
+  /* Sunny Spring Breeze & Peach Mint Oasis */
+  --bg-app: #f4f7fb;          /* Uplifting warm sky off-white */
+  --bg-card: #ffffff;         /* Pristine porcelain white */
+  --bg-card-hover: #edf2f9;   /* Refreshing soft breeze */
+  --bg-input: #ffffff;        /* Pure white */
+  --border-main: #e2e8f0;     /* Soft slate border */
+  --border-focus: #94a3b8;    /* Focused slate border */
+  
+  --text-main: #0f172a;       /* Deep slate-blue text */
+  --text-muted: #475569;      /* Classy slate gray */
+  --text-dim: #64748b;        /* Soft neutral labels */
+  
+  --btn-primary-bg: #3b82f6;  /* Sunny active Blue */
+  --btn-primary-text: #ffffff;
+  --btn-primary-hover: #60a5fa;
+  
+  --btn-secondary-bg: #f8fafc;
+  --btn-secondary-text: #1e293b;
+  --btn-secondary-hover: #f1f5f9;
+  
+  --accent-indigo: #4f46e5;
+  --accent-emerald: #059669;
+  --accent-rose: #e11d48;
+  --accent-amber: #d97706;
+}
+
+/* Base Body Styles */
+body, .min-h-screen {
+  background-color: var(--bg-app) !important;
+  color: var(--text-main) !important;
+  transition: background-color 0.4s cubic-bezier(0.16, 1, 0.3, 1), color 0.4s ease;
+  background-image: radial-gradient(at 0% 0%, rgba(99, 102, 241, 0.08) 0px, transparent 50%),
+                    radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.08) 0px, transparent 50%) !important;
+}
+
+.light-mode-theme body, .light-mode-theme .min-h-screen {
+  background-image: radial-gradient(at 0% 0%, rgba(59, 130, 246, 0.1) 0px, transparent 50%),
+                    radial-gradient(at 100% 100%, rgba(16, 185, 129, 0.1) 0px, transparent 50%) !important;
+}
+
+/* Beautiful Glowing Aurora Backdrops */
+.blur-3xl, .blur-2xl {
+  display: block !important;
+  opacity: 0.6 !important;
+  filter: blur(60px) !important;
+  mix-blend-mode: plus-lighter !important;
+}
+
+/* Glassmorphism Cards & Layout Containers */
+.bg-slate-900,
+.bg-slate-900\/60,
+.bg-slate-900\/40,
+.bg-slate-900\/80,
+.bg-slate-950,
+.bg-slate-950\/50,
+.bg-slate-950\/40,
+.bg-slate-950\/30,
+.bg-slate-950\/20,
+.bg-slate-900\/90 {
+  background-color: rgba(17, 19, 42, 0.75) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid var(--border-main) !important;
+  color: var(--text-main) !important;
+}
+
+.light-mode-theme .bg-slate-900,
+.light-mode-theme .bg-slate-900\/60,
+.light-mode-theme .bg-slate-900\/40,
+.light-mode-theme .bg-slate-900\/80,
+.light-mode-theme .bg-slate-950,
+.light-mode-theme .bg-slate-950\/50,
+.light-mode-theme .bg-slate-950\/40,
+.light-mode-theme .bg-slate-950\/30,
+.light-mode-theme .bg-slate-950\/20,
+.light-mode-theme .bg-slate-900\/90 {
+  background-color: rgba(255, 255, 255, 0.85) !important;
+  backdrop-filter: blur(12px) !important;
+  border: 1px solid var(--border-main) !important;
+  color: var(--text-main) !important;
+}
+
+/* Scrollbar styling */
+.custom-scrollbar::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+.custom-scrollbar::-webkit-scrollbar-track {
+  background: transparent;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb {
+  background: var(--border-main);
+  border-radius: 999px;
+}
+.custom-scrollbar::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-indigo);
+}
+
+/* Form inputs & interactive controls */
+select, input, textarea {
+  background-color: var(--bg-input) !important;
+  border: 1px solid var(--border-main) !important;
+  color: var(--text-main) !important;
+  border-radius: 14px !important;
+  font-size: 13px !important;
+  transition: border-color 0.2s cubic-bezier(0.16, 1, 0.3, 1), box-shadow 0.2s ease !important;
+}
+select:focus, input:focus, textarea:focus {
+  border-color: var(--border-focus) !important;
+  box-shadow: 0 0 0 4px rgba(99, 102, 241, 0.15) !important;
+  outline: none !important;
+}
+.light-mode-theme select:focus, .light-mode-theme input:focus, .light-mode-theme textarea:focus {
+  box-shadow: 0 0 0 4px rgba(59, 130, 246, 0.15) !important;
+}
+
+/* Overriding specific gradient buttons to be joyful solid minimalist but with smooth glows */
+button.py-3.px-5.bg-gradient-to-r,
+button[type="submit"].bg-gradient-to-r,
+button#login-submit-button,
+button#signup-submit-button,
+button#forgot-submit-button,
+.bg-gradient-to-r.from-indigo-600.to-emerald-500,
+.bg-gradient-to-r.from-indigo-600.to-indigo-700,
+.bg-gradient-to-r.from-emerald-500.to-teal-600,
+.bg-indigo-600 {
+  background: linear-gradient(135deg, var(--btn-primary-bg) 0%, var(--accent-indigo) 100%) !important;
+  color: var(--btn-primary-text) !important;
+  border: none !important;
+  font-weight: 600 !important;
+  box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.3) !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+
+button.py-3.px-5.bg-gradient-to-r:hover,
+button[type="submit"].bg-gradient-to-r:hover,
+button#login-submit-button:hover,
+button#signup-submit-button:hover,
+button#forgot-submit-button:hover:not(:disabled),
+.bg-gradient-to-r.from-indigo-600.to-emerald-500:hover,
+.bg-gradient-to-r.from-indigo-600.to-indigo-700:hover,
+.bg-gradient-to-r.from-emerald-500.to-teal-600:hover,
+.bg-indigo-600:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px 0 rgba(99, 102, 241, 0.45) !important;
+  opacity: 0.95;
+}
+
+.light-mode-theme button.py-3.px-5.bg-gradient-to-r,
+.light-mode-theme button[type="submit"].bg-gradient-to-r,
+.light-mode-theme .bg-gradient-to-r.from-indigo-600.to-emerald-500,
+.light-mode-theme .bg-indigo-600 {
+  background: linear-gradient(135deg, #3b82f6 0%, #10b981 100%) !important;
+  box-shadow: 0 4px 14px 0 rgba(59, 130, 246, 0.25) !important;
+}
+
+/* Beautiful task checkboxes with success visual feedback */
+button[id^="checkbox-"].bg-gradient-to-tr {
+  background: linear-gradient(135deg, var(--accent-emerald) 0%, #34d399 100%) !important;
+  color: #ffffff !important;
+  border-color: transparent !important;
+  box-shadow: 0 2px 8px 0 rgba(16, 185, 129, 0.2) !important;
+}
+
+/* Nav header and borders */
+header, .border-b {
+  border-color: var(--border-main) !important;
+}
+
+/* Dynamic active state indicators */
+.text-white, h1, h2, h3, h4, h5, h6 {
+  color: var(--text-main) !important;
+}
+.text-slate-400, .text-slate-500, .text-slate-600, .text-slate-300, .text-indigo-200\/80 {
+  color: var(--text-muted) !important;
+}
+
+/* Universal high-end borders */
+.border-slate-800,
+.border-slate-800\/80,
+.border-slate-850,
+.border-slate-800\/60,
+.border-slate-850\/40,
+.border-indigo-500\/10 {
+  border-color: var(--border-main) !important;
+}
+
+/* Joyful sticky navigation drawer */
+nav.fixed {
+  background-color: rgba(17, 19, 42, 0.92) !important;
+  backdrop-filter: blur(16px) !important;
+  border-top: 1px solid var(--border-main) !important;
+}
+.light-mode-theme nav.fixed {
+  background-color: rgba(255, 255, 255, 0.92) !important;
+}
+
+nav.fixed button {
+  color: var(--text-muted) !important;
+  transition: all 0.2s ease;
+}
+nav.fixed button.text-indigo-400 {
+  color: var(--btn-primary-bg) !important;
+  font-weight: 700 !important;
+  transform: scale(1.05);
+}
+
+/* Cheerful shadow systems */
+.shadow-2xl, .shadow-xl, .shadow-lg, .shadow-md, .shadow-sm {
+  box-shadow: 0 10px 30px -10px rgba(0, 0, 0, 0.3) !important;
+}
+.light-mode-theme .shadow-2xl, .light-mode-theme .shadow-xl, .light-mode-theme .shadow-lg {
+  box-shadow: 0 10px 30px -10px rgba(148, 163, 184, 0.15) !important;
+}
+
+/* Beautiful custom badges */
+span.rounded-full {
+  background-color: var(--bg-card-hover) !important;
+  border: 1px solid var(--border-main) !important;
+  color: var(--text-main) !important;
+}
+
+/* Luxurious task card designs */
+div[id^="task-card-"] {
+  border: 1px solid var(--border-main) !important;
+  background-color: var(--bg-card) !important;
+  border-radius: 20px !important;
+  transition: all 0.3s cubic-bezier(0.16, 1, 0.3, 1) !important;
+}
+div[id^="task-card-"]:hover {
+  background-color: var(--bg-card-hover) !important;
+  border-color: var(--accent-indigo) !important;
+  transform: translateY(-2px);
+  box-shadow: 0 12px 24px -10px rgba(99, 102, 241, 0.25) !important;
+}
+
+/* Splash logo container overlay override */
+#splash-screen .bg-gradient-to-tr {
+  background: linear-gradient(135deg, #6366f1 0%, #10b981 100%) !important;
+  box-shadow: 0 10px 30px -5px rgba(99, 102, 241, 0.4) !important;
+}
+
+/* High-end decorative graphics and overlays */
+.p-2.bg-gradient-to-tr {
+  background: linear-gradient(135deg, rgba(99, 102, 241, 0.15) 0%, rgba(16, 185, 129, 0.15) 100%) !important;
+  border: 1px solid var(--border-main) !important;
+}
+
+/* Cheerful Custom secondary button styling */
+button.p-2.bg-slate-900\/40,
+button.p-2.5.bg-slate-900\/40,
+button.py-1.5.px-3.5.rounded-xl {
+  background-color: var(--btn-secondary-bg) !important;
+  color: var(--btn-secondary-text) !important;
+  border: 1px solid var(--border-main) !important;
+  transition: all 0.25s ease !important;
+  border-radius: 14px !important;
+}
+button.p-2.bg-slate-900\/40:hover,
+button.p-2.5.bg-slate-900\/40:hover,
+button.py-1.5.px-3.5.rounded-xl:hover {
+  background-color: var(--btn-secondary-hover) !important;
+  border-color: var(--border-focus) !important;
+  color: var(--text-main) !important;
+}
+
+/* Category & priority colors */
+.bg-rose-500\/10 {
+  background-color: rgba(244, 63, 94, 0.12) !important;
+  border: 1px solid rgba(244, 63, 94, 0.2) !important;
+}
+.bg-emerald-500\/10 {
+  background-color: rgba(16, 185, 129, 0.12) !important;
+  border: 1px solid rgba(16, 185, 129, 0.2) !important;
+}
+.bg-amber-500\/10 {
+  background-color: rgba(245, 158, 11, 0.12) !important;
+  border: 1px solid rgba(245, 158, 11, 0.2) !important;
+}
+
+/* Chart customized styling */
+.recharts-cartesian-grid-horizontal line,
+.recharts-cartesian-grid-vertical line {
+  stroke: var(--border-main) !important;
+  stroke-dasharray: 3 3;
+}
+
+/* Highly Interactive Micro Animations */
+@keyframes pulseGlow {
+  0% { transform: scale(1); opacity: 0.95; box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.2); }
+  50% { transform: scale(1.02); opacity: 1; box-shadow: 0 4px 20px 0 rgba(99, 102, 241, 0.45); }
+  100% { transform: scale(1); opacity: 0.95; box-shadow: 0 4px 14px 0 rgba(99, 102, 241, 0.2); }
+}
+.joyful-glow-pulse {
+  animation: pulseGlow 3s infinite ease-in-out;
+}

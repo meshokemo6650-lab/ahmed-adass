@@ -1,0 +1,12 @@
+{
+  "name": "Remix: Daily Task Manager",
+  "description": "منظم المهام اليومية الذكي - تطبيق حديث لتنظيم وإدارة المهام اليومية وترتيب الأولويات بمساعدة الذكاء الاصطناعي والإحصائيات التفاعلية.",
+  "requestFramePermissions": [
+    "camera",
+    "microphone",
+    "geolocation"
+  ],
+  "majorCapabilities": [
+    "MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"
+  ]
+}
